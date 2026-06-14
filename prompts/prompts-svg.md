@@ -34,13 +34,15 @@ execute @prompts/prompts-generate-devops-skill.md
 
 ## Prompt 5
 ´´´text
-
+/devops-pipeline haz lo mismo en el fichero pipeline-test.yml pero para hacer pruebas y ver que se ejecuta. En esta ocasión, debe ejectuarse cada vez que hago push a la rama feature en la que estoy desarrollando. Solo debe encargarse de pasar los tests de backend
 ´´´
 
 ---
 
 ## Prompt 6
 ´´´text
+! [remote rejected] feature/pipeline-svg -> feature/pipeline-svg (refusing to allow a Personal Access Token to create or update workflow `.github/workflows/pipeline-test.yml` without `workflow` scope)
+error: failed to push some refs to 'https://github.com/svg80/AI4Devs-pipeline-202603SRII.git' 
 
 ´´´
 
@@ -48,7 +50,8 @@ execute @prompts/prompts-generate-devops-skill.md
 
 ## Prompt 7
 ´´´text
-
+test
+Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/cache@v4, actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 16th, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 ´´´
 
 ---
