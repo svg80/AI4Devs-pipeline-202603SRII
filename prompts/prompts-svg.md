@@ -111,7 +111,7 @@ Elimina el step de lint porque hay que modificar ficheros y no es el objetivo de
 
 ## Prompt 13
 ´´´text
-
+/devops-pipeline en cada step los primero pasos (las primeras 10 líneas) se repiten. Crea un composite action para poder reutilizarlo y no duplicarlo
 ´´´
 
 ---

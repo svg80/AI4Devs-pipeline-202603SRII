@@ -1,0 +1,23 @@
+name: Setup Node and install deps
+description: Checkout, setup Node, cache node_modules, install backend dependencies
+inputs:
+  node-version:
+    description: Node.js version
+    required: false
+    default: '18'
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v6
+    - name: Setup Node
+      uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Cache backend node_modules
+      uses: actions/cache@v5
+      with:
+        path: backend/node_modules
+        key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/package-lock.json') }}
+    - name: Install backend deps
+      shell: bash
+      run: cd backend && npm ci
