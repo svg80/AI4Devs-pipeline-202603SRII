@@ -123,3 +123,11 @@ Error: Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under '/home/runne
 
 ---
 
+## Prompt 15 
+´´´text
+/devops-pipeline añade un último paso a @.github/workflows/pipeline.yml para desplegar el backend en un EC2. La instancia EC2 solo está levantada, el pipeline debe instalar todo lo necesario. El usuario de la instancia EC2 es ec2-user. En los secretos del repo están disponibles las siguientes variables: AWS_ACCESS_ID (id de la clave de acceso a AWS), AWS_ACCESS_KEY (clave de acceso a AWS), EC2_INSTANCE (IP pública de la instancia EC2), EC2_SSH_PRIVATE_KEY (clave privada para conectar a la instancia EC2) y AWS_REGION (región de la intancia)
+´´´
+
+---
+
+
