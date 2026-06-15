@@ -118,7 +118,7 @@ Elimina el step de lint porque hay que modificar ficheros y no es el objetivo de
 
 ## Prompt 14
 ´´´text
-
+Error: Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under '/home/runner/work/AI4Devs-pipeline-202603SRII/AI4Devs-pipeline-202603SRII/.github/actions/setup'. Did you forget to run actions/checkout before running your local action?
 ´´´
 
 ---
