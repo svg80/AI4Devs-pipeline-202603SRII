@@ -38,7 +38,7 @@ jobs:
           key: ${{ runner.os }}-backend-dist-${{ github.sha }}
 
   deploy-backend:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
     needs: build-backend
     runs-on: ubuntu-latest
     steps:
