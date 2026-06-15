@@ -79,14 +79,32 @@ Node.js 20 actions are deprecated. The following actions are running on Node.js 
 
 ## Prompt 11
 ´´´text
+/devops-pipeline al ejecutar el step de lint da error:
+Run cd backend && npx eslint src/
 
+Oops! Something went wrong! :(
+
+ESLint: 9.3.0
+
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+
+From ESLint v9.0.0, the default configuration file is now eslint.config.js.
+If you are using a .eslintrc.* file, please follow the migration guide
+to update your configuration file to the new format:
+
+https://eslint.org/docs/latest/use/configure/migration-guide
+
+If you still have problems after following the migration guide, please stop by
+https://eslint.org/chat/help to chat with the team.
+
+Error: Process completed with exit code 2.
 ´´´
 
 ---
 
 ## Prompt 12
 ´´´text
-
+Elimina el step de lint porque hay que modificar ficheros y no es el objetivo del ejercici
 ´´´
 
 ---
