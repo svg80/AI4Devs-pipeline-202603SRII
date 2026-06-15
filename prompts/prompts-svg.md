@@ -58,21 +58,21 @@ Node.js 20 actions are deprecated. The following actions are running on Node.js 
 
 ## Prompt 8
 ´´´text
-
+/devops-pipeline modifica el fichero @.github/workflows/pipeline.yml para añadir un paso encargado de generar el build del backend
 ´´´
 
 ---
 
 ## Prompt 9
 ´´´text
-
+/devops-pipeline el nombre del job no es descriptivo con lo que hace. Separa en dos jobs, uno para test y otro para build. Además incluye un paso inicial de lint en el backend para detectar que no hay errores de sintaxis y que todo es correcto antes de pasar tests
 ´´´
 
 ---
 
 ## Prompt 10
 ´´´text
-
+/devops-pipeline modifica el fichero @.github/workflows/pipeline.yml para indicar que el on pull request solo debe ejecutarse cuando sea contra la rama main. Además añade otro on para que se ejectue en el push de cualquier rama, de manera que pueda eliminar .github/workflows/pipeline-test.yml
 ´´´
 
 ---

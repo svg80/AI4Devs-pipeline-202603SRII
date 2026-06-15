@@ -3,12 +3,15 @@ name: Pipeline
 on:
   pull_request:
     types: [opened, synchronize]
+    branches: [main]
+  push:
+    branches: [feature/*]
 
 env:
   NODE_VERSION: '18'
 
 jobs:
-  test-backend:
+  lint-backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -23,5 +26,43 @@ jobs:
           key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/package-lock.json') }}
       - name: Install backend deps
         run: cd backend && npm ci
+      - name: Lint backend
+        run: cd backend && npx eslint src/
+
+  test-backend:
+    needs: lint-backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore backend node_modules
+        uses: actions/cache@v5
+        with:
+          path: backend/node_modules
+          key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/package-lock.json') }}
+      - name: Install backend deps
+        run: cd backend && npm ci
       - name: Run backend tests
         run: cd backend && npm test
+
+  build-backend:
+    needs: test-backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Restore backend node_modules
+        uses: actions/cache@v5
+        with:
+          path: backend/node_modules
+          key: ${{ runner.os }}-backend-node-${{ hashFiles('backend/package-lock.json') }}
+      - name: Install backend deps
+        run: cd backend && npm ci
+      - name: Build backend
+        run: cd backend && npm run build
